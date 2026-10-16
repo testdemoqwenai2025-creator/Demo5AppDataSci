@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[12938,["6919","static/chunks/6919-0b705a450486e0f4.js","8500","static/chunks/8500-98e13bcce54aa7a0.js","9760","static/chunks/9760-8142a177e82b6691.js","1164","static/chunks/1164-2885af72f44622c3.js","9620","static/chunks/9620-22226827eec8dc4d.js","6722","static/chunks/6722-dafc6d428c2788b1.js","1984","static/chunks/app/(phase-12-platform-tools)/genealogy/page-add1ce6ac0cc1aed.js"],"GenealogyPage"]
+3:I[90484,[],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"lZtdlSsMFwOjWD_CjPToh","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

@@ -1,0 +1,376 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "ModernDataSciEng Platform API",
+    "version": "1.0.0",
+    "description": "The IDataConnector contract exposed as REST. On GitHub Pages (static export) these routes are moved aside during build — they activate when deployed to a real server (Vercel/Node/Docker). The same contract powers the browser-native runtime (DuckDB-Wasm + IndexedDB) and the documented server-side runtime (psycopg + S3 SDK). Phase 16 Task 16.2.",
+    "contact": {
+      "name": "Platform Team",
+      "url": "https://github.com/testdemoqwenai2025-creator/AppDataSciLHC5-Advance"
+    },
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.moderndatascieng.example/v1",
+      "description": "Production (when deployed — not active on GitHub Pages)"
+    },
+    {
+      "url": "http://localhost:3000/api",
+      "description": "Local dev (when running `bun dev`)"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key",
+        "description": "Per-tenant API key. Issued by the platform team. Maps to a tenant_id which scopes all queries."
+      }
+    },
+    "schemas": {
+      "DataSegment": {
+        "type": "object",
+        "required": ["rows", "offset", "limit", "totalRows", "schema"],
+        "properties": {
+          "rows": {
+            "type": "array",
+            "items": { "type": "object", "additionalProperties": true },
+            "description": "The rows in this segment (array of objects keyed by column name)."
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "0-indexed offset of the first row in this segment."
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Number of rows in this segment (may be less than requested at end of dataset)."
+          },
+          "totalRows": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Total rows in the full dataset (for progress indicator)."
+          },
+          "schema": { "$ref": "#/components/schemas/DataSchema" }
+        }
+      },
+      "DataSchema": {
+        "type": "object",
+        "required": ["columns"],
+        "properties": {
+          "columns": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/DataColumn" }
+          }
+        }
+      },
+      "DataColumn": {
+        "type": "object",
+        "required": ["name", "dtype"],
+        "properties": {
+          "name": { "type": "string", "description": "Column name." },
+          "dtype": {
+            "type": "string",
+            "enum": ["number", "string", "boolean", "date"],
+            "description": "Inferred data type."
+          },
+          "nunique": {
+            "type": "integer",
+            "description": "Number of unique values (for categorical detection)."
+          },
+          "nulls": { "type": "integer", "description": "Number of null/NaN values." }
+        }
+      },
+      "TriageRequest": {
+        "type": "object",
+        "required": ["datasetId", "question"],
+        "properties": {
+          "datasetId": { "type": "string", "description": "The dataset to triage." },
+          "question": {
+            "type": "string",
+            "description": "Natural-language question about data quality."
+          },
+          "maxTokens": {
+            "type": "integer",
+            "default": 2000,
+            "description": "Max LLM tokens to spend on this triage."
+          }
+        }
+      },
+      "TriageResponse": {
+        "type": "object",
+        "required": ["agent_id", "triage"],
+        "properties": {
+          "agent_id": {
+            "type": "string",
+            "description": "The triage agent that handled this request (e.g. 'dq-triage-v1')."
+          },
+          "triage": {
+            "type": "object",
+            "description": "Structured triage output (varies by agent)."
+          },
+          "_meta": {
+            "type": "object",
+            "properties": {
+              "model": { "type": "string" },
+              "tokens": { "type": "integer" },
+              "latency_ms": { "type": "integer" },
+              "timestamp": { "type": "string", "format": "date-time" }
+            }
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": ["error"],
+        "properties": {
+          "error": { "type": "string" },
+          "details": { "type": "object" }
+        }
+      }
+    }
+  },
+  "security": [{ "ApiKeyAuth": [] }],
+  "paths": {
+    "/datasets/{id}/segment": {
+      "get": {
+        "summary": "Get a segment of a dataset (lazy evaluation)",
+        "description": "Returns rows[offset:offset+limit] from the dataset. The connector factory auto-selects PublicCSV (browser), DuckDB-Wasm (browser SQL), or Postgres/S3 (when DATABASE_URL/S3_BUCKET set). This is the primary read endpoint — supports pagination via offset/limit.",
+        "operationId": "getDatasetSegment",
+        "tags": ["datasets"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Dataset ID. Known IDs: iris, penguins, titanic, boston-housing, wine."
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "minimum": 0, "default": 0 },
+            "description": "0-indexed offset of the first row to return."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "minimum": 1, "maximum": 1000, "default": 20 },
+            "description": "Maximum number of rows to return (1-1000)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Segment fetched successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    { "$ref": "#/components/schemas/DataSegment" },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "datasetId": { "type": "string" },
+                        "connectorType": {
+                          "type": "string",
+                          "enum": [
+                            "public-csv",
+                            "duckdb-wasm",
+                            "postgres",
+                            "s3",
+                            "gcs",
+                            "azure-blob",
+                            "websocket"
+                          ]
+                        },
+                        "connectorActive": { "type": "boolean" },
+                        "backendMode": { "type": "string" }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unknown dataset ID.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded or daily LLM-token cost cap reached.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } }
+            }
+          },
+          "500": {
+            "description": "Connector error.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } }
+            }
+          }
+        }
+      }
+    },
+    "/agent-triage": {
+      "post": {
+        "summary": "Run an LLM-driven data-quality triage on a dataset",
+        "description": "LangGraph-style agentic triage. Uses z-ai-web-dev-sdk LLM with a structured JSON schema. Read-only audit guardrails enforced (no mutations, PII masked, cost cap, human approval required for destructive suggestions). Returns a structured triage report.",
+        "operationId": "runAgentTriage",
+        "tags": ["agents"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": { "schema": { "$ref": "#/components/schemas/TriageRequest" } }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Triage completed.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/TriageResponse" } }
+            }
+          },
+          "429": {
+            "description": "Daily LLM-token cost cap reached. The tenant has spent its daily token budget.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } }
+            }
+          },
+          "503": {
+            "description": "Triage service unavailable (LLM backend down). Falls back to a deterministic stub.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/TriageResponse" } }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Discover the triage schema + agent inventory",
+        "description": "Returns the JSON schema for the triage response + the list of available agents + their guardrails. Useful for client codegen.",
+        "operationId": "discoverAgentTriage",
+        "tags": ["agents"],
+        "responses": {
+          "200": {
+            "description": "Schema + agent inventory.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "agents": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": { "type": "string" },
+                          "name": { "type": "string" },
+                          "guardrails": { "type": "array", "items": { "type": "string" } }
+                        }
+                      }
+                    },
+                    "response_schema": { "type": "object" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ask-anything": {
+      "post": {
+        "summary": "Multi-turn chat with page-context awareness",
+        "description": "General Q&A endpoint. Fetches the referenced page's HTML server-side, strips tags, injects into LLM context. Multi-turn (carries conversation history).",
+        "operationId": "askAnything",
+        "tags": ["agents"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["question"],
+                "properties": {
+                  "question": { "type": "string" },
+                  "pageId": {
+                    "type": "string",
+                    "description": "Optional page ID for context injection."
+                  },
+                  "history": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "role": { "type": "string", "enum": ["user", "assistant"] },
+                        "content": { "type": "string" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Answer.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "answer": { "type": "string" },
+                    "context": {
+                      "type": "string",
+                      "description": "The page content that was injected into the LLM context."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Smoke endpoint — verify the API is alive",
+        "description": "Returns a small JSON blob. Useful for health checks + uptime monitoring.",
+        "operationId": "smoke",
+        "tags": ["meta"],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "API alive.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string" },
+                    "version": { "type": "string" },
+                    "timestamp": { "type": "string", "format": "date-time" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    { "name": "datasets", "description": "Dataset segment reads (lazy evaluation)." },
+    { "name": "agents", "description": "LLM-driven agentic workflows (triage, Q&A)." },
+    { "name": "meta", "description": "Health + smoke endpoints." }
+  ]
+}

@@ -1,0 +1,132 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[8593],{8195:(e,t,r)=>{"use strict";r.d(t,{A:()=>a});let a=(0,r(6404).A)("database",[["ellipse",{cx:"12",cy:"5",rx:"9",ry:"3",key:"msslwz"}],["path",{d:"M3 5V19A9 3 0 0 0 21 19V5",key:"1wlel7"}],["path",{d:"M3 12A9 3 0 0 0 21 12",key:"mv7ke4"}]])},19776:(e,t,r)=>{"use strict";r.d(t,{N:()=>d,R:()=>l});var a=r(95155),s=r(12115),n=r(94514),i=r(67635),o=r(89239);function d({code:e,language:t="sql",filename:r,highlight:d=[]}){let[l,c]=(0,s.useState)(!1),h=e.replace(/\n$/,"").split("\n"),m=async()=>{try{await navigator.clipboard.writeText(e),c(!0),setTimeout(()=>c(!1),1500)}catch{}};return(0,a.jsxs)("div",{className:"rounded-md border border-border/60 bg-[oklch(0.16_0.005_240)] text-[oklch(0.97_0.005_60)] overflow-hidden",children:[(0,a.jsxs)("div",{className:"flex items-center justify-between px-3 py-1.5 border-b border-white/10 bg-white/5",children:[(0,a.jsxs)("div",{className:"flex items-center gap-2 text-[11px] text-white/60 font-mono",children:[(0,a.jsx)("span",{className:"h-2 w-2 rounded-full bg-rose-400"}),(0,a.jsx)("span",{className:"h-2 w-2 rounded-full bg-amber-400"}),(0,a.jsx)("span",{className:"h-2 w-2 rounded-full bg-emerald-400"}),(0,a.jsx)("span",{className:"ml-2 uppercase tracking-wider",children:t}),r&&(0,a.jsxs)("span",{className:"text-white/40",children:["\xb7 ",r]})]}),(0,a.jsxs)(o.$,{variant:"ghost",size:"sm",className:"h-6 px-2 text-[11px] text-white/70 hover:text-white hover:bg-white/10",onClick:m,"aria-label":"Copy code",children:[l?(0,a.jsx)(n.A,{className:"h-3 w-3 mr-1"}):(0,a.jsx)(i.A,{className:"h-3 w-3 mr-1"}),l?"Copied":"Copy"]})]}),(0,a.jsx)("pre",{className:"code-scroll overflow-x-auto p-3 text-[12.5px] leading-relaxed font-mono",children:(0,a.jsx)("code",{children:h.map((e,t)=>{let r=t+1,s=d.includes(r);return(0,a.jsxs)("div",{className:["flex",s?"bg-primary/20 -mx-3 px-3 border-l-2 border-primary":""].join(" "),children:[(0,a.jsx)("span",{className:"select-none text-white/30 w-8 inline-block text-right pr-3 shrink-0",children:r}),(0,a.jsx)("span",{className:"whitespace-pre",children:e||" "})]},r)})})})]})}function l({children:e}){return(0,a.jsx)("code",{className:"rounded bg-muted px-1.5 py-0.5 text-[12px] font-mono text-foreground/90 border border-border/60",children:e})}},22164:(e,t,r)=>{"use strict";r.d(t,{A:()=>a});let a=(0,r(6404).A)("external-link",[["path",{d:"M15 3h6v6",key:"1q9fwt"}],["path",{d:"M10 14 21 3",key:"gplh6r"}],["path",{d:"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",key:"a6xqqp"}]])},38802:(e,t,r)=>{Promise.resolve().then(r.bind(r,83246))},60508:(e,t,r)=>{"use strict";r.d(t,{R:()=>y});var a=r(95155),s=r(12115),n=r(45160),i=r(89239),o=r(66349),d=r(85404),l=r(58381),c=r(79275),h=r(48368),m=r(22164),p=r(86901),x=r(89123),u=r(21628),g=r(98500),v=r.n(g),f=r(85757);function y({pageId:e}){let t=(0,c.C6)(e);return 0===t.length?null:(0,a.jsxs)(l.iv,{title:"Recent research (2023-2025)",description:"Modern papers that extend the math, code, and tools on this page.",icon:(0,a.jsx)(h.A,{className:"h-5 w-5"}),badge:`${t.length} paper${1===t.length?"":"s"}`,badgeVariant:"outline",contentClassName:"space-y-4",children:[t.map((e,t)=>(0,a.jsx)(b,{entry:e},t)),(0,a.jsxs)("p",{className:"text-[11px] text-muted-foreground italic",children:[t.length," paper",1===t.length?"":"s"," mapped to this page. Each shows the key algorithm + expected output (rendered as charts when the code produces JSON). Run the code in-browser via Pyodide."]})]})}function b({entry:e}){let[t,r]=(0,s.useState)(!1),[l,c]=(0,s.useState)(null);return(0,a.jsxs)("div",{className:"rounded-lg border border-border/60 p-4 space-y-3 hover:border-primary/30 transition-colors",children:[(0,a.jsxs)("div",{className:"space-y-1",children:[(0,a.jsxs)("div",{className:"flex items-start justify-between gap-3",children:[(0,a.jsx)("h4",{className:"text-sm font-semibold leading-tight flex-1",children:e.paperTitle}),(0,a.jsx)(n.E,{variant:"outline",className:"text-[10px] shrink-0",children:e.venue})]}),(0,a.jsxs)("p",{className:"text-[11px] text-muted-foreground",children:[e.authors," \xb7 ",e.year]}),e.arxivId&&(0,a.jsxs)("a",{href:`https://arxiv.org/abs/${e.arxivId}`,target:"_blank",rel:"noopener noreferrer",className:"inline-flex items-center gap-1 text-[11px] text-primary hover:underline",children:[(0,a.jsx)(m.A,{className:"h-3 w-3"}),"arXiv:",e.arxivId]}),e.doi&&!e.arxivId&&(0,a.jsxs)("a",{href:`https://doi.org/${e.doi}`,target:"_blank",rel:"noopener noreferrer",className:"inline-flex items-center gap-1 text-[11px] text-primary hover:underline",children:[(0,a.jsx)(m.A,{className:"h-3 w-3"}),"DOI:",e.doi]})]}),(0,a.jsx)("p",{className:"text-[12px] text-muted-foreground leading-relaxed",children:e.abstract}),(0,a.jsxs)(i.$,{variant:"outline",size:"sm",onClick:()=>r(!t),className:"h-7 text-[11px] gap-1.5",children:[(0,a.jsx)(p.A,{className:"h-3 w-3"}),t?"Hide expected code":"Show expected code + visualization"]}),t&&(0,a.jsxs)("div",{className:"space-y-2",children:[(0,a.jsx)(o.l,{code:e.expectedCode,buttonLabel:"Run in browser",onOutput:e=>{try{let t=e.indexOf("{"),r=e.lastIndexOf("}");if(t>=0&&r>t){let a=e.substring(t,r+1);c(JSON.parse(a))}}catch{}},hideTextOutput:!!l,compact:!0}),l?(0,a.jsxs)("div",{className:"space-y-2",children:[(0,a.jsxs)("div",{className:"flex items-center gap-1.5",children:[(0,a.jsx)(x.A,{className:"h-3.5 w-3.5 text-primary"}),(0,a.jsx)("p",{className:"text-[10px] uppercase tracking-wider text-muted-foreground",children:"Visualization (rendered from code output)"})]}),(0,a.jsx)(d.D,{data:l,accent:"oklch(0.65 0.18 250)",sourceCode:e.expectedCode})]}):(0,a.jsxs)("div",{className:"rounded-md border border-primary/20 bg-primary/5 p-2.5",children:[(0,a.jsx)("p",{className:"text-[10px] uppercase tracking-wider text-muted-foreground mb-1",children:"Expected output"}),(0,a.jsx)("pre",{className:"text-[11px] font-mono whitespace-pre-wrap leading-relaxed",children:e.expectedOutput})]}),(0,a.jsxs)("div",{className:"rounded-md border border-emerald-500/30 bg-emerald-500/5 p-2.5",children:[(0,a.jsx)("p",{className:"text-[10px] uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-1",children:"Key insight"}),(0,a.jsx)("p",{className:"text-[12px] text-foreground/80 leading-relaxed",children:e.keyInsight})]})]}),(0,a.jsxs)(v(),{href:(0,f.ZJ)("analytics-outputs"),className:"inline-flex items-center gap-1 text-[11px] text-primary hover:underline",children:["See this math visualized on Analytics Outputs ",(0,a.jsx)(u.A,{className:"h-3 w-3"})]})]})}},67635:(e,t,r)=>{"use strict";r.d(t,{A:()=>a});let a=(0,r(6404).A)("copy",[["rect",{width:"14",height:"14",x:"8",y:"8",rx:"2",ry:"2",key:"17jyea"}],["path",{d:"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2",key:"zix9uf"}]])},83036:(e,t,r)=>{"use strict";r.d(t,{P:()=>l,S:()=>c});var a=r(95155),s=r(98500),n=r.n(s),i=r(44071),o=r(97810),d=r(85757);function l({title:e,connectedTo:t,researchHref:r,children:s}){return(0,a.jsxs)("div",{className:"rounded-md border border-primary/30 bg-primary/5 p-4 space-y-2",children:[(0,a.jsxs)("div",{className:"flex items-start gap-2",children:[(0,a.jsx)(i.A,{className:"h-4 w-4 text-primary mt-0.5 shrink-0"}),(0,a.jsxs)("div",{className:"flex-1 min-w-0",children:[(0,a.jsx)("p",{className:"text-sm font-semibold text-foreground/90 leading-tight",children:e}),t&&(0,a.jsxs)("div",{className:"flex items-center gap-1.5 mt-1",children:[(0,a.jsx)(o.A,{className:"h-3 w-3 text-muted-foreground"}),(0,a.jsxs)(n(),{href:r??(0,d.ZJ)("research"),className:"text-[10px] text-muted-foreground hover:text-primary hover:underline",children:["Connected to: ",t," →"]})]})]})]}),(0,a.jsx)("div",{className:"text-xs text-muted-foreground leading-relaxed space-y-2 pl-6",children:s})]})}function c({pageTitle:e,children:t}){return(0,a.jsxs)("div",{className:"space-y-4",children:[(0,a.jsxs)("div",{className:"flex items-center gap-2 border-b border-border/60 pb-2",children:[(0,a.jsx)(i.A,{className:"h-5 w-5 text-primary"}),(0,a.jsxs)("h2",{className:"text-base font-bold text-foreground/90",children:["My deeper thoughts — ",e]})]}),(0,a.jsx)("p",{className:"text-xs text-muted-foreground italic leading-relaxed",children:"These are not summaries. They are arguments — the kind of connections a reader with serious grey matter would make after living with the material for years. Each thought connects to the platform's research section (ADRs, papers, decision records) so it's traceable, not just opinionated."}),(0,a.jsx)("div",{className:"space-y-3",children:t})]})}},83246:(e,t,r)=>{"use strict";r.d(t,{RagLlmsPage:()=>N});var a=r(95155),s=r(98500),n=r.n(s),i=r(58381),o=r(27774),d=r(19776),l=r(66349),c=r(60508),h=r(92194),m=r(85757),p=r(45160),x=r(86901),u=r(33024),g=r(8195),v=r(44071),f=r(10762),y=r(90718),b=r(83036);let w=[{label:"RAG pattern",value:"Query→Embed→Search→LLM",hint:"Retrieve Augmented Generation",deltaTone:"flat"},{label:"Vector DBs",value:"5+",hint:"Pinecone \xb7 Weaviate \xb7 Qdrant \xb7 pgvector \xb7 Milvus",deltaTone:"flat"},{label:"Embedding model",value:"text-embedding-3",hint:"OpenAI / Cohere / open-source (BGE)",deltaTone:"flat"},{label:"Platform role",value:"Gold tables",hint:"Your Gold layer becomes the LLM knowledge base",deltaTone:"flat"}],j=[{name:"Pinecone",type:"Managed SaaS",free:"Starter: 1 index, 100k vectors",dims:"Up to 20k dims"},{name:"Weaviate",type:"OSS + managed",free:"100% OSS; cloud free trial",dims:"Any"},{name:"Qdrant",type:"OSS + managed",free:"1GB free on Qdrant Cloud",dims:"Any"},{name:"pgvector",type:"Postgres extension",free:"Free (Postgres + extension)",dims:"Up to 2k"},{name:"Milvus",type:"OSS",free:"100% OSS, self-hostable",dims:"Any"},{name:"Chroma",type:"OSS (embedded)",free:"100% OSS, in-process",dims:"Any"}];function N(){return(0,a.jsxs)("div",{className:"space-y-8",children:[(0,a.jsx)(i.zY,{eyebrow:"GenAI \xb7 RAG & LLMs",title:"RAG & LLMs — Gold Tables as Knowledge Base",description:"The platform's Gold tables become an LLM knowledge base via RAG (Retrieval-Augmented Generation). Query → embed → vector search → retrieve context → LLM generates answer. The data engineering stack (Bronze→Silver→Gold + Arrow + Iceberg) IS the RAG infrastructure. This is the convergence of data engineering + AI.",right:(0,a.jsxs)(p.E,{variant:"outline",className:"gap-1.5",children:[(0,a.jsx)(x.A,{className:"h-3 w-3"})," GenAI"]})}),(0,a.jsx)("div",{className:"grid grid-cols-2 md:grid-cols-4 gap-3",children:w.map(e=>(0,a.jsx)(i.nO,{label:e.label,value:e.value,hint:e.hint,deltaTone:e.deltaTone},e.label))}),(0,a.jsx)(i.iv,{title:"The RAG pipeline — 5 steps",icon:(0,a.jsx)(u.A,{className:"h-5 w-5"}),children:(0,a.jsx)(d.N,{language:"text",filename:"rag_pipeline.txt",code:`┌─────────────────────────────────────────────────────────────────┐
+│  THE RAG PIPELINE — Gold Tables → LLM Knowledge Base            │
+│                                                                 │
+│  1. EMBED    ─┐                                                  │
+│    Gold tables │ → embed each row as a vector (1536 dims)      │
+│    (fct_orders, │ → store in vector DB (pgvector / Pinecone)   │
+│     dim_customer│                                                │
+│     etc.)      ─┘                                                │
+│                                                                 │
+│  2. QUERY    ─┐                                                  │
+│    User asks: │ → embed the question using same model          │
+│    "What was  │ → vector: [0.12, -0.34, 0.56, ...]              │
+│     UK revenue└─────────────────────────────────────────────────│
+│     last Q?"                                                     │
+│                                                                 │
+│  3. SEARCH   ─┐                                                  │
+│    Vector DB  │ → cosine similarity between query + stored      │
+│    (pgvector) │ → top-k = 5 most relevant rows                   │
+│    cosine sim │ → retrieved: fct_orders row (UK, Q=\xa32.1M)     │
+│               └─────────────────────────────────────────────────│
+│                                                                 │
+│  4. CONTEXT  ─┐                                                  │
+│    Retrieved  │ → format as context for the LLM                 │
+│    rows +     │ → "Context: UK Q revenue = \xa32.1M, orders=1.2k"│
+│    schema     └─────────────────────────────────────────────────│
+│                                                                 │
+│  5. GENERATE ─┐                                                  │
+│    LLM (GPT/  │ → "UK revenue last quarter was \xa32.1M across    │
+│    Claude)    │   1,200 orders. This is up 15% from the         │
+│               │   previous quarter (\xa31.8M)."                    │
+│               └─────────────────────────────────────────────────│
+│                                                                 │
+│  The Gold tables ARE the knowledge base.                       │
+│  The LLM is the reasoning engine.                                │
+│  The data platform IS the AI platform.                           │
+└─────────────────────────────────────────────────────────────────┘`})}),(0,a.jsx)(i.iv,{title:"Vector databases — the new query layer",icon:(0,a.jsx)(g.A,{className:"h-5 w-5"}),contentClassName:"p-0",children:(0,a.jsx)("div",{className:"overflow-x-auto",children:(0,a.jsxs)("table",{className:"w-full text-sm",children:[(0,a.jsx)("thead",{children:(0,a.jsxs)("tr",{className:"border-b border-border/60 bg-muted/40",children:[(0,a.jsx)("th",{className:"text-left px-3 py-2 text-[10px] uppercase tracking-wider text-muted-foreground",children:"Vector DB"}),(0,a.jsx)("th",{className:"text-left px-3 py-2 text-[10px] uppercase tracking-wider text-muted-foreground",children:"Type"}),(0,a.jsx)("th",{className:"text-left px-3 py-2 text-[10px] uppercase tracking-wider text-muted-foreground",children:"Free tier"}),(0,a.jsx)("th",{className:"text-left px-3 py-2 text-[10px] uppercase tracking-wider text-muted-foreground",children:"Dimensions"})]})}),(0,a.jsx)("tbody",{children:j.map(e=>(0,a.jsxs)("tr",{className:"border-b border-border/40 last:border-0 hover:bg-muted/20",children:[(0,a.jsx)("td",{className:"px-3 py-2 text-xs font-semibold",children:e.name}),(0,a.jsx)("td",{className:"px-3 py-2 text-[11px] text-muted-foreground",children:e.type}),(0,a.jsx)("td",{className:"px-3 py-2 text-[11px] text-emerald-600 dark:text-emerald-400",children:e.free}),(0,a.jsx)("td",{className:"px-3 py-2 text-[11px] font-mono text-muted-foreground",children:e.dims})]},e.name))})]})})}),(0,a.jsx)(i.iv,{title:"My deeper thought: Gold tables ARE embeddings",icon:(0,a.jsx)(v.A,{className:"h-5 w-5"}),badge:"Insight",children:(0,a.jsxs)("div",{className:"space-y-3 text-sm text-muted-foreground leading-relaxed",children:[(0,a.jsxs)("p",{children:['The deepest insight in the RAG pattern: your Gold tables don\'t need to be "connected to" an LLM — they need to be ',(0,a.jsx)("strong",{className:"text-foreground/80",children:"embedded into a vector space"}),". Each row in fct_orders becomes a 1536-dimensional vector. The LLM doesn't query your SQL; it queries the vector space. The vector DB is the new query layer — and pgvector means it's ",(0,a.jsx)("em",{children:"inside your existing Postgres"}),"."]}),(0,a.jsxs)("p",{children:[(0,a.jsx)("strong",{className:"text-foreground/80",children:"The platform's Bronze→Silver→Gold pipeline IS the RAG ingestion pipeline."})," Bronze = raw source data. Silver = conformed/cleaned. Gold = embedded + vectorised + indexed. The same Airflow DAGs that refresh your BI dashboards can refresh your vector index. The same Unity Catalogue that governs PII tags governs which rows are embedded. The same CI/CD that deploys dbt models deploys embedding pipelines. One platform, many modalities."]}),(0,a.jsxs)("p",{children:["The agentic layer (ADR-019's bandit + the DQ triage agent) becomes the ",(0,a.jsx)("strong",{className:"text-foreground/80",children:"intelligent query interface"}),'. Instead of writing SQL, you ask: "What was UK revenue last quarter?" The agent embeds the query, searches the Gold-table vector space, retrieves context, and generates a grounded answer. The data platform becomes a ',(0,a.jsx)("em",{children:"conversation"}),", not a dashboard."]})]})}),(0,a.jsx)(i.iv,{title:"Try it: Vector similarity search (Pyodide)",icon:(0,a.jsx)(f.A,{className:"h-5 w-5"}),badge:"executable",children:(0,a.jsx)(l.l,{code:`# RAG simulation — cosine similarity search in pure Python
+# Shows how vector search retrieves relevant rows from a "knowledge base"
+
+import math
+
+def cosine_similarity(v1, v2):
+    "Cosine sim = dot(a,b) / (|a| * |b|). 1.0 = identical, 0.0 = orthogonal."
+    dot = sum(a * b for a, b in zip(v1, v2))
+    mag1 = math.sqrt(sum(a * a for a in v1))
+    mag2 = math.sqrt(sum(b * b for b in v2))
+    if mag1 == 0 or mag2 == 0:
+        return 0.0
+    return dot / (mag1 * mag2)
+
+# Simulated embeddings (in production: 1536-dim from text-embedding model)
+# Each row in the "Gold table" is embedded as a 6-dim vector
+knowledge_base = [
+    {"id": "row_1", "text": "UK revenue Q3 = \xa32.1M, 1.2k orders",
+     "vector": [0.9, 0.8, 0.7, 0.1, 0.3, 0.2]},
+    {"id": "row_2", "text": "EU revenue Q3 = \xa31.8M, 0.9k orders",
+     "vector": [0.7, 0.6, 0.8, 0.2, 0.4, 0.3]},
+    {"id": "row_3", "text": "NA revenue Q3 = \xa33.2M, 2.1k orders",
+     "vector": [0.8, 0.5, 0.6, 0.9, 0.7, 0.4]},
+    {"id": "row_4", "text": "VIP customer churn rate = 3.2%",
+     "vector": [0.1, 0.2, 0.1, 0.8, 0.9, 0.7]},
+    {"id": "row_5", "text": "Returns rate UK = 6.4%, 78 returns",
+     "vector": [0.9, 0.7, 0.8, 0.1, 0.2, 0.5]},
+]
+
+# User query: "What was UK revenue?"
+# Embed using the same model (simulated as a vector)
+query = "What was UK revenue last quarter?"
+query_vector = [0.92, 0.75, 0.68, 0.05, 0.25, 0.15]
+
+# Vector search — compute cosine similarity against all rows
+results = []
+for row in knowledge_base:
+    sim = cosine_similarity(query_vector, row["vector"])
+    results.append((row, sim))
+
+# Sort by similarity (descending) — top-k retrieval
+results.sort(key=lambda x: x[1], reverse=True)
+top_k = 3
+
+print("=" * 60)
+print("RAG Vector Search — Cosine Similarity Retrieval")
+print("=" * 60)
+print(f"\\nQuery: '{query}'")
+print(f"Query vector: {[round(v, 2) for v in query_vector]}")
+print(f"\\nSearching {len(knowledge_base)} rows in knowledge base...")
+
+print(f"\\nTop-{top_k} results (cosine similarity):")
+for i, (row, sim) in enumerate(results[:top_k]):
+    print(f"  {i+1}. [{row['id']}] sim={sim:.4f}")
+    print(f"     → {row['text']}")
+
+# Build context for the LLM
+context = "\\n".join(f"- {r[0]['text']}" for r in results[:top_k])
+print(f"\\n{'=' * 60}")
+print("CONTEXT FOR LLM (top-3 retrieved rows):")
+print(f"  {context}")
+print(f"\\nLLM prompt: 'Based on this data: {context}\\n  Answer: What was UK revenue last quarter?'")
+print(f"\\nExpected LLM output: 'UK revenue last quarter was \xa32.1M")
+print(f"  across 1,200 orders. Returns rate was 6.4%.'")
+print("=" * 60)`,buttonLabel:"Run RAG vector search (Pyodide)"})}),(0,a.jsx)(i.iv,{title:"LangChain — the RAG orchestrator",icon:(0,a.jsx)(y.A,{className:"h-5 w-5"}),children:(0,a.jsx)(d.N,{language:"python",filename:"rag_pipeline.py",highlight:[5,6,7,8,9,10,13,14,15,18,19,20,21,22,23],code:`from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import PGVector
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.chains import RetrievalQA
+from langchain.llms import OpenAI
+
+# 1. EMBED — Gold table rows → vectors
+embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+# Each row in fct_orders/dim_customer → 1536-dim vector
+
+# 2. STORE — vectors in pgvector (inside your existing Postgres)
+vectorstore = PGVector(
+    connection_string="postgresql://moderndatascieng-db:5432/rag",
+    embedding_function=embeddings,
+)
+
+# 3. INDEX — ingest Gold table rows as documents
+docs = [{"page_content": str(row), "metadata": {"table": "fct_orders"}}
+        for row in gold_table_rows]
+vectorstore.add_documents(docs)
+
+# 4. RETRIEVE — vector search on user query
+retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
+
+# 5. GENERATE — LLM answers grounded in retrieved context
+qa_chain = RetrievalQA.from_chain_type(
+    llm=OpenAI(temperature=0),
+    chain_type="stuff",
+    retriever=retriever,
+)
+
+answer = qa_chain.run("What was UK revenue last quarter?")
+# → "UK revenue last quarter was \xa32.1M across 1,200 orders."`})}),(0,a.jsxs)(b.S,{pageTitle:"RAG & LLMs",children:[(0,a.jsx)(b.P,{title:"RAG & LLMs IS part of a larger system — no page stands alone",connectedTo:"ADR-001 (platform architecture)",children:(0,a.jsx)("p",{children:"This page about RAG & LLMs is not an isolated reference — it's a node in a graph. The platform's thesis is that the same math appears across genomics, fintech, maritime, and audio. RAG & LLMs connects to the elegant-code cards via shared equations, and to the living-equation pages via live demos. The reader who arrives here looking for facts leaves with a map of where RAG & LLMs sits in the computational-science landscape."})}),(0,a.jsx)(b.P,{title:"The technology will change; the math won't",connectedTo:"ADR-055 (cross-disciplinary scope)",children:(0,a.jsx)("p",{children:"In a decade, the specific tools on this page (RAG & LLMs) may be replaced. But the underlying mathematics — the equations, the distributions, the optimisation rules — will be the same. SVD was invented in 1873 and still runs on NumPy today. Attention was described in 2017 and will run on whatever replaces PyTorch. The platform invests in the MATH, not the tools, because the math is the part that survives technology turnover."})}),(0,a.jsx)(b.P,{title:"The fold pattern respects the reader's attention",connectedTo:"ADR-050 (fold-section architecture)",children:(0,a.jsx)("p",{children:"This page has fold sections (collapsed by default) that reveal deeper content on demand — equation family comparisons, LaTeX derivations, production patterns, expected outputs, and citations. The basic content is visible immediately; the deeper phases are there when the reader is ready. Progressive disclosure isn't just UX — it's epistemological. A reader who wants the summary gets it; a reader who wants the derivation clicks to expand. Both are served by the same page."})}),(0,a.jsx)(b.P,{title:"The output IS the proof — not just the equation",connectedTo:"ADR-034 (ESM-2 + AlphaFold2 adoption)",children:(0,a.jsx)("p",{children:"Where this page has interactive demos (Pyodide + sliders + charts), the visual output IS the argument. Seeing a chart update as you drag a slider communicates the math in a way no formula can. The brain's pattern-recognition system processes the visual output faster than the verbal/analytical pathway. That's why the platform pairs every equation with a live demo — the output plays to a different level of the brain than the prose."})}),(0,a.jsx)(b.P,{title:"In a decade, this page will evolve — and that's the point",connectedTo:"ADR-022 (pgvector for variant embeddings)",children:(0,a.jsx)("p",{children:"The datasets, libraries, and tools on this page will be updated as technology evolves. The 1000-Genomes Project will become the 10M-Genomes Project. NumPy may be replaced by a WebGPU-native array library. PyTorch may give way to a successor. But the math — SVD, Attention, Poisson, FFT, Bayes, Kalman, GBM — will be the same. The platform is designed for this evolution: the equations are the anchor, the tools are the amplifier, and the fold sections let us update the tools without rewriting the page."})})]}),(0,a.jsx)(c.R,{pageId:"rag-llms"}),(0,a.jsx)(h.B,{pageId:"rag-llms"}),(0,a.jsx)(o.T,{relatedPages:[{id:"connections",reason:"Trace this topic's connections across the platform's math graph"},{id:"neural-networks",reason:"Continue to neural networks — see also from this page"},{id:"ml-platform",reason:"Continue to ml platform — see also from this page"}]}),(0,a.jsxs)("div",{className:"flex flex-wrap gap-2",children:[(0,a.jsx)(n(),{href:(0,m.ZJ)("neural-networks"),className:"text-sm text-primary hover:underline",children:"→ Neural Networks (Transformer architecture)"}),(0,a.jsx)("span",{className:"text-muted-foreground",children:"\xb7"}),(0,a.jsx)(n(),{href:(0,m.ZJ)("ml-platform"),className:"text-sm text-primary hover:underline",children:"→ ML Platform (MLOps lifecycle)"}),(0,a.jsx)("span",{className:"text-muted-foreground",children:"\xb7"}),(0,a.jsx)(n(),{href:(0,m.ZJ)("knowledge"),className:"text-sm text-primary hover:underline",children:"→ See ADR-021 (ONNX) + ADR-020 (MLflow)"})]})]})}},86901:(e,t,r)=>{"use strict";r.d(t,{A:()=>a});let a=(0,r(6404).A)("sparkles",[["path",{d:"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z",key:"4pj2yx"}],["path",{d:"M20 3v4",key:"1olli1"}],["path",{d:"M22 5h-4",key:"1gvqau"}],["path",{d:"M4 17v2",key:"vumght"}],["path",{d:"M5 18H3",key:"zchphs"}]])},90718:(e,t,r)=>{"use strict";r.d(t,{A:()=>a});let a=(0,r(6404).A)("brain",[["path",{d:"M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z",key:"l5xja"}],["path",{d:"M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z",key:"ep3f8r"}],["path",{d:"M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4",key:"1p4c4q"}],["path",{d:"M17.599 6.5a3 3 0 0 0 .399-1.375",key:"tmeiqw"}],["path",{d:"M6.003 5.125A3 3 0 0 0 6.401 6.5",key:"105sqy"}],["path",{d:"M3.477 10.896a4 4 0 0 1 .585-.396",key:"ql3yin"}],["path",{d:"M19.938 10.5a4 4 0 0 1 .585.396",key:"1qfode"}],["path",{d:"M6 18a4 4 0 0 1-1.967-.516",key:"2e4loj"}],["path",{d:"M19.967 17.484A4 4 0 0 1 18 18",key:"159ez6"}]])},94514:(e,t,r)=>{"use strict";r.d(t,{A:()=>a});let a=(0,r(6404).A)("check",[["path",{d:"M20 6 9 17l-5-5",key:"1gmf2c"}]])},97810:(e,t,r)=>{"use strict";r.d(t,{A:()=>a});let a=(0,r(6404).A)("book-open",[["path",{d:"M12 7v14",key:"1akyts"}],["path",{d:"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z",key:"ruj8y"}]])}},e=>{e.O(0,[6919,8500,9430,3493,9760,7591,6012,9237,4843,9620,6722,5404,9275,2194,8441,3794,7358],()=>e(e.s=38802)),_N_E=e.O()}]);

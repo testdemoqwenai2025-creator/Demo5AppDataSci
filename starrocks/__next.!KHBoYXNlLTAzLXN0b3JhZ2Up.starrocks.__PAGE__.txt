@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[46355,["6919","static/chunks/6919-0b705a450486e0f4.js","8500","static/chunks/8500-98e13bcce54aa7a0.js","9430","static/chunks/9430-22dbae45014f3da9.js","3493","static/chunks/3493-8a6f6547588c82c0.js","9760","static/chunks/9760-8142a177e82b6691.js","7591","static/chunks/7591-1de8275faf5a44b0.js","6012","static/chunks/6012-9cfec6d0cee3564c.js","1164","static/chunks/1164-2885af72f44622c3.js","3049","static/chunks/3049-ba7cd4a23a7e90de.js","9620","static/chunks/9620-22226827eec8dc4d.js","6722","static/chunks/6722-dafc6d428c2788b1.js","7860","static/chunks/7860-607d6052740012d2.js","9689","static/chunks/9689-6c736e723d201260.js","9969","static/chunks/9969-4baed7d79e55e249.js","4608","static/chunks/app/(phase-03-storage)/starrocks/page-a07c4027da6228c4.js"],"StarRocksPage"]
+3:I[90484,[],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"lZtdlSsMFwOjWD_CjPToh","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[61319,["6919","static/chunks/6919-0b705a450486e0f4.js","8500","static/chunks/8500-98e13bcce54aa7a0.js","9430","static/chunks/9430-22dbae45014f3da9.js","3493","static/chunks/3493-8a6f6547588c82c0.js","9760","static/chunks/9760-8142a177e82b6691.js","7591","static/chunks/7591-1de8275faf5a44b0.js","6012","static/chunks/6012-9cfec6d0cee3564c.js","9237","static/chunks/9237-336aa42c1a01873c.js","4843","static/chunks/4843-155caf76d6e20778.js","1164","static/chunks/1164-2885af72f44622c3.js","3640","static/chunks/3640-3e3e0b75b321d5ff.js","9620","static/chunks/9620-22226827eec8dc4d.js","6722","static/chunks/6722-dafc6d428c2788b1.js","5404","static/chunks/5404-9dc3b13316ea727c.js","9275","static/chunks/9275-bfd41c87b79f9190.js","2194","static/chunks/2194-e550949eed9dc30f.js","7860","static/chunks/7860-607d6052740012d2.js","9689","static/chunks/9689-6c736e723d201260.js","2045","static/chunks/2045-4a1189a8faffd3df.js","6918","static/chunks/app/(phase-03-storage)/clickhouse/page-01dc6dd0a785767b.js"],"ClickhousePage"]
+3:I[90484,[],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"lZtdlSsMFwOjWD_CjPToh","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

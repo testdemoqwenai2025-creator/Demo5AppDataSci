@@ -1,0 +1,5 @@
+:HL["/Demo5AppDataSci/_next/static/media/22a5144ee8d83bca-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Demo5AppDataSci/_next/static/media/7d4881bb7e1bf84d-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Demo5AppDataSci/_next/static/css/dcded0ab852d929b.css","style"]
+:HL["/Demo5AppDataSci/_next/static/css/003072418b0a6ffb.css","style"]
+0:{"buildId":"lZtdlSsMFwOjWD_CjPToh","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"(phase-08-living-equations)","paramType":null,"paramKey":"(phase-08-living-equations)","hasRuntimePrefetch":false,"slots":{"children":{"name":"living-monte-carlo","paramType":null,"paramKey":"living-monte-carlo","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
